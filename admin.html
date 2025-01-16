@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Dreams - Admin Panel</title>
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="sidebar">
+            <div class="logo">Admin Panel</div>
+            <ul class="nav-links">
+                <li class="active" data-page="dashboard">Dashboard</li>
+                <li data-page="users">User Management</li>
+                <li data-page="songs">Song Management</li>
+                <li id="logoutBtn">Logout</li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <div id="loginPage" class="page">
+                <div class="login-container">
+                    <h2>Admin Login</h2>
+                    <form id="adminLoginForm">
+                        <input type="text" placeholder="Email" required>
+                        <input type="password" placeholder="Password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="dashboard" class="page hidden">
+                <h2>Dashboard</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <p id="totalUsers">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Songs</h3>
+                        <p id="totalSongs">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="users" class="page hidden">
+                <h2>User Management</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>Registration Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <!-- User data will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="songs" class="page hidden">
+                <h2>Song Management</h2>
+                <div class="upload-section">
+                    <h3>Upload New Song</h3>
+                    <form id="songUploadForm">
+                        <input type="text" placeholder="Song Title" required>
+                        <div class="file-inputs">
+                            <div class="input-group">
+                                <label>Song File (MP3)</label>
+                                <input type="file" accept="audio/mp3" required name="songFile">
+                            </div>
+                            <div class="input-group">
+                                <label>Cover Image</label>
+                                <input type="file" accept="image/*" required name="imageFile">
+                            </div>
+                        </div>
+                        <button type="submit">Upload</button>
+                    </form>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cover</th>
+                                <th>Title</th>
+                                <th>Upload Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="songTableBody">
+                            <!-- Song data will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
